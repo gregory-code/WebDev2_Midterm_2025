@@ -1,0 +1,90 @@
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4; /* Light background */
+	color: #222222; /* Dark text */
+}
+
+#container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 20px auto;
+	background-color: #fff; /* White container */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+
+header {
+	background-color: #cb333b; /* Primary red */
+	color: #f4f4f4; /* Light text on red */
+	padding: 20px;
+	text-align: center;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 2.5em;
+}
+
+nav.navbar {
+	background-color: #aa1010; /* Darker red navbar */
+	
+}
+
+nav.navbar .navbar-brand,
+nav.navbar .nav-link {
+	color: #000000 !important; /* Black navbar text */
+}
+
+nav.navbar a:hover {
+	text-decoration:underline; /* underline links not in the dropdown */
+}
+
+nav.navbar .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(244, 244, 244, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Light toggler icon */
+}
+
+nav.navbar .dropdown-menu {
+	background-color: #89191c; /* Darkest red dropdown */
+}
+
+nav.navbar .dropdown-item {
+	color: #f4f4f4; /* Light dropdown text */
+}
+nav.navbar .dropdown-item:hover {
+	background-color: #222222; /* Dark text */
+}
+
+#content {
+	padding: 20px;
+	min-height: 400px;
+}
+
+footer {
+	background-color: #000000; /* Black footer */
+	color: #f4f4f4; /* Light footer text */
+	text-align: center;
+	padding: 10px 0;
+}
+
+footer nav a {
+	color: #f4f4f4;
+	margin: 0 10px;
+	text-decoration: none;
+}
+
+footer nav a:hover {
+	text-decoration: underline;
+}
+
+.btn-outline-success {
+	color: #f4f4f4;
+	border-color: #f4f4f4;
+}
+
+.btn-outline-success:hover {
+	background-color: #222222;
+	border-color: #f4f4f4;
+	color: #f4f4f4;
+}
