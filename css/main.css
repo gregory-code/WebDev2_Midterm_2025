@@ -38,7 +38,7 @@ nav.navbar .nav-link {
 }
 
 nav.navbar a:hover {
-	text-decoration:underline; /* underline links not in the dropdown */
+	text-decoration:underline; /* underline links */
 }
 
 nav.navbar .navbar-toggler-icon {
