@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white; /* would need to have the game loaded at the moment we use white */
+}
+
+#pauseButton { /* assigned id in js */
+    position: absolute; 
+    top: 20px; /* Appear at the top right of the screen */
+    right: 20px;
+    width: 100px;
+    cursor: pointer;
+} 
+
+.overlay {
+    display: none; /*do not display anything if pause ain't triggered*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay.active { /* sort of if statement where if overlay active, we have the display that pops up*/
+    display: flex;
+}
+
+.menu-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-background {
+    width: 500px;
+    height: auto;
+}
+
+#resumeButton {
+    position: absolute;
+    width: 100px;
+}
+
+.menu-button {
+    width: 100px;
+    cursor: pointer;
+}
+.menu-button:hover {
+    transform:scale(1.1);
+    transition: 0.5s;
+}
+
+.sound-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sound-container img {
+    width: 100px;
+}
+
+.switch {
+    position: relative;
+    width: 60px;
+    height: 34px;
+    margin-top: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider { /*Asked chatgpt to get a slider, it worked successfully*/ 
+    position: absolute;
+    cursor: pointer;
+    top: 0; /*I guess those are reference points for the slider*/ 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.5s;
+}
+
+.slider:before { /*It create condition before and the slider at rest above*/ 
+    position: absolute;
+    content: ""; /*this create a the switch square within the rectangle! Size of rectangle will vary depending on the size of the square inside"*/ 
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.5s;
+}
+
+input:checked + .slider { /*switch color*/ 
+    background-color: #1a1b1c;
+}
+
+input:checked + .slider:before { /*transition on x axis by the size of our square slider on one side or the other*/ 
+    transform: translateX(26px);
+}
