@@ -8,181 +8,175 @@
     <link rel="icon" href="Images/ImperiumOfMan.png" type="image/png">
     <style>
         body {
-			font-family: 'Roboto', sans-serif;
-			background-color: #222;
-			color: #f5f5f5;
-			margin: 0;
-			padding: 0;
-		}
+            font-family: 'Roboto', sans-serif;
+            background-color: #222;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
 
-		h1, h2, h3 {
-			font-family: 'Poppins', sans-serif;
-			font-weight: bold;
-			color: #FFD700;
-			text-decoration: underline;
-		}
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            color: #FFD700;
+            text-decoration: underline;
+        }
 
-		header, footer {
-			padding: 20px;
-			text-align: center;
-		}
+        header, footer {
+            padding: 20px;
+            text-align: center;
+        }
 
-		header h1 {
-			font-size: 3rem;
-			margin-bottom: 20px;
-		}
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
 
-		nav {
-			background-color: #333;
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			z-index: 1000;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-		}
+        nav {
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
 
-		nav ul {
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-			display: flex;
-			justify-content: center;
-		}
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
 
-		nav ul li {
-			margin: 0 15px;
-		}
+        nav ul li {
+            margin: 0 15px;
+        }
 
-		nav ul li a {
-			display: block;
-			padding: 15px 20px;
-			text-align: center;
-			color: white;
-			text-decoration: none;
-			font-size: 18px;
-			text-transform: uppercase;
-			transition: background-color 0.3s, transform 0.3s ease, color 0.3s ease;
-		}
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: background-color 0.3s, transform 0.3s ease, color 0.3s ease;
+        }
 
-		nav ul li a:hover {
-			background-color: #575757;
-			transform: scale(1.1);
-			color: #FFD700;
-			border-radius: 5px;
-		}
-		.navbar-text {
-			color: white; /* Adjust text color */
-			font-weight: bold; /* Make it bold */
-			font-size: 24px; /* Set font size (larger size) */
-			padding: 10px 15px; /* Add some padding for spacing */
-		}
+        nav ul li a:hover {
+            background-color: #575757;
+            transform: scale(1.1);
+            color: #FFD700;
+            border-radius: 5px;
+        }
+        .navbar-text {
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            padding: 10px 15px;
+        }
 
+        #content {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+            margin-top: 100px;
+        }
 
-		#content {
-			padding: 20px;
-			max-width: 1000px;
-			margin: auto;
-			text-align: center;
-			margin-top: 100px; /* Added margin to push content below navbar */
-		}
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin-bottom: 40px;
+        }
 
-		.video-container {
-			position: relative;
-			padding-bottom: 56.25%; /* Aspect ratio (16:9) */
-			height: 0;
-			overflow: hidden;
-			max-width: 100%;
-			margin-bottom: 40px;
-		}
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-		.video-container iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
+        .button-container {
+            margin-top: 20px;
+        }
 
-		.button-container {
-			margin-top: 20px;
-		}
+        button {
+            background-color: #FFD700;
+            color: black;
+            font-size: 18px;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
 
-		button {
-			background-color: #FFD700;
-			color: black;
-			font-size: 18px;
-			border: none;
-			padding: 12px 30px;
-			cursor: pointer;
-			border-radius: 5px;
-			transition: background-color 0.3s;
-		}
+        button:hover {
+            background-color: #ffcc00;
+        }
 
-		button:hover {
-			background-color: #ffcc00;
-		}
+        footer {
+            background-color: #333;
+            color: #f5f5f5;
+            font-size: 14px;
+            padding: 10px;
+        }
 
-		footer {
-			background-color: #333;
-			color: #f5f5f5;
-			font-size: 14px;
-			padding: 10px;
-		}
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
 
-		footer a {
-			color: #FFD700;
-			text-decoration: none;
-		}
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-		footer a:hover {
-			text-decoration: underline;
-		}
+        .logo img {
+            width: 180px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
 
-		.logo img {
-			width: 180px;
-			height: auto;
-			transition: transform 0.3s ease;
-		}
+        .logo img:hover {
+            transform: scale(1.1);
+        }
 
-		.logo img:hover {
-			transform: scale(1.1);
-		}
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
 
-		/* Responsive Design */
-		@media (max-width: 768px) {
-			h1 {
-				font-size: 2rem;
-			}
+            nav ul {
+                flex-direction: column;
+            }
 
-			nav ul {
-				flex-direction: column;
-			}
-
-			.video-container {
-				padding-bottom: 56.25%; /* Aspect ratio */
-				height: 0;
-				max-width: 100%;
-			}
-		}
-
+            .video-container {
+                padding-bottom: 56.25%;
+                height: 0;
+                max-width: 100%;
+            }
+        }
 
     </style>
 </head>
-
-		<script>
-		document.getElementById("SwapClick").play();
-		</script>
 <body>
     <div id="container">
         <header>
             <nav>
                 <ul>
-					<li><div class= "navbar-text">Spring Midterm</div></li>
+                    <li><div class="navbar-text">Spring Midterm</div></li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="page2.html">Page2</a></li>
                     <li><a href="page4.html">Page4</a></li>
-					<li><a href="page5.html">Page5</a></li>
+                    <li><a href="page5.html">Page5</a></li>
                 </ul>
             </nav>
         </header>
@@ -198,14 +192,30 @@
             </div>
 
             <div class="button-container">
-			<audio id="SwapClick" src="Audio/orders-received-101soundboards.mp3" preload="auto"></audio>
-            <button onclick="window.open('https://warhammer40k.fandom.com/wiki/Space_Marines', '_blank')">Learn More About Space Marines</button>
+                <!-- Add ID to the button so it can be referenced in JavaScript -->
+                <button id="openTabButton">Learn More About Space Marines</button>
+                <audio id="SwapClick" src="Audio/orders-received-101soundboards.mp3" preload="auto"></audio>
             </div>
         </div>
-		
+        
         <footer>
             <p> Copyright Spring 2025 Web Dev 2 | <a href="index.html">Home</a></p>
         </footer>
     </div>
+    
+    <script>
+        // Function to handle button click
+        function SpaceMarine() {
+            document.getElementById("openTabButton").addEventListener("click", function() {
+                // Open a new tab with the Space Marines page
+                window.open("https://warhammer40k.fandom.com/wiki/Space_Marines", "_blank");
+                // Play the sound when clicked
+                document.getElementById("SwapClick").play();
+            });
+        }
+
+        // Call the function to initialize the event listener
+        SpaceMarine();
+    </script>
 </body>
 </html>
