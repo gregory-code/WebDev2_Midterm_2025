@@ -8,10 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let isSoundOn = true;
 
-    pauseButton.addEventListener('click', () => { // the id retrieved in css
-        overlay.classList.add('active');
-        pauseButton.style.display = 'none'; 
+    document.getElementById("pauseButton").addEventListener("click", function() {
+        this.style.display = "none"; 
+        document.querySelector(".overlay").classList.add("active"); 
     });
+    
 
     resumeButton.addEventListener('click', () => { // On click button/ actionable
         overlay.classList.remove('active');
@@ -23,15 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     homeButton.addEventListener('click', () => { // On click button/ acctionable
-        console.log('NEED FOR redirectory to home page here');
+        window.location.href = '../index.html';
     });
 
     soundToggle.addEventListener('change', () => { // Need some audio :)
-        isSoundOn = soundToggle.checked;
-        if (isSoundOn) {
+        soundOn = soundToggle.checked;
+        if (SoundOn) {
             console.log('');
         } else {
-            console.log('');
+            console.log('none');
         }
     });
 });
