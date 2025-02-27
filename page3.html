@@ -172,7 +172,7 @@
         <header>
             <nav>
                 <ul>
-                    <li><div class="navbar-text">Spring Midterm</div></li>
+                    <li><div class="navbar-text" id="Hover">Spring Midterm</div></li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="page2.html">Page2</a></li>
                     <li><a href="page4.html">Page4</a></li>
@@ -195,6 +195,7 @@
                 <!-- Add ID to the button so it can be referenced in JavaScript -->
                 <button id="openTabButton">Learn More About Space Marines</button>
                 <audio id="SwapClick" src="Audio/orders-received-101soundboards.mp3" preload="auto"></audio>
+                <audio id="WhatIsDuty" src="Audio/WhatIsDuty.mp3" preload="auto"></audio>
             </div>
         </div>
         
@@ -205,17 +206,17 @@
     
     <script>
         // Function to handle button click
-        function SpaceMarine() {
-            document.getElementById("openTabButton").addEventListener("click", function() {
-                // Open a new tab with the Space Marines page
-                window.open("https://warhammer40k.fandom.com/wiki/Space_Marines", "_blank");
-                // Play the sound when clicked
-                document.getElementById("SwapClick").play();
-            });
-        }
+        document.getElementById("openTabButton").addEventListener("click", function() {
+            // Open a new tab with the Space Marines page
+            window.open("https://warhammer40k.fandom.com/wiki/Space_Marines", "_blank");
+            // Play the sound when clicked
+            document.getElementById("SwapClick").play();
+        });
 
-        // Call the function to initialize the event listener
-        SpaceMarine();
+        // Add event listener for hover on "Spring Midterm"
+        document.getElementById("Hover").addEventListener("mouseover", function() {
+            document.getElementById("WhatIsDuty").play();
+        });
     </script>
 </body>
 </html>
