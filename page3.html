@@ -170,6 +170,9 @@
     </style>
 </head>
 
+		<script>
+		document.getElementById("SwapClick").play();
+		</script>
 <body>
     <div id="container">
         <header>
@@ -195,12 +198,13 @@
             </div>
 
             <div class="button-container">
-                <button onclick="window.open('https://warhammer40k.fandom.com/wiki/Space_Marines', '_blank')">Learn More About Space Marines</button>
+			<audio id="SwapClick" src="Audio/orders-received-101soundboards.mp3" preload="auto"></audio>
+            <button onclick="window.open('https://warhammer40k.fandom.com/wiki/Space_Marines', '_blank')">Learn More About Space Marines</button>
             </div>
         </div>
-
+		
         <footer>
-            <p>&copy; Copyright Spring 2025 Web Dev 2 | <a href="index.html">Home</a></p>
+            <p> Copyright Spring 2025 Web Dev 2 | <a href="index.html">Home</a></p>
         </footer>
     </div>
 </body>
