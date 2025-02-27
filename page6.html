@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> [Greg Rigdon] Midterm </title>
+		<meta name="viewport" content="widgth=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/fancy.css">
+		<link rel="icon" href="images/icon.jpg" type="image/jpg">
+		<style>
+            body {
+                background-image: url('../images/eggnoredAnimalCrossing.png'); /* This will override the background with this one*/
+            }
+
+			/*.navButton { background: linear-gradient(135deg, #c79a32, #f0dd67);} /* This will override the style and give it a different color*/
+		</style>
+	</head>
+
+	<body>
+		<audio id="animalCrossingMusic" autoplay muted loop>
+			<source src="audio/AC7PM(Cherry).mp3" />
+			Your browser does not support audio elements.
+		</audio>
+
+		<div class="navContainer">
+
+			<div class="navButton" id="Home">
+				<div class="navInside">
+					<img src="images/home.png" alt="Home Icon">
+				</div>
+				<div class="navTextBackground">
+					<span class="navText">Home</span>
+				</div>
+			</div>
+
+			<div class="navButton" id="Discover">
+				<div class="navInside">
+					<img src="images/discover.png" alt="Discover Icon">
+				</div>
+				<div class="navTextBackground">
+					<span class="navText">Discover</span>
+				</div>
+			</div>
+
+			<div class="navButton" id="Contact">
+				<div class="navInside">
+					<img src="images/contact.png" alt="Contact Icon">
+				</div>
+				<div class="navTextBackground">
+					<span class="navText">Contact</span>
+				</div>
+			</div>
+
+			<div class="navButton" id="Settings">
+				<div class="navInside">
+					<img src="images/settings.png" alt="Settings Icon">
+				</div>
+				<div class="navTextBackground">
+					<span class="navText">Settings</span>
+				</div>
+			</div>
+
+		</div>
+
+		<h1> Gregory Rigdon </h1>
+
+		<h1>Contact Me</h1>
+
+		<div class="centerContainer">
+
+			<form action="https://formspree.io/f/xvgogqae" method="POST">
+				<!-- Using a 3rd party website you can send emails to yourself by sending the information inputted on your website to the 3rd party URL -->
+				<input type="text" name="Name" placeholder="Full Name" required>
+				<input type="email" name="Email" placeholder="Email">
+				<select name="Reason for Contacting">
+					<!-- using options you can make a list of choices that just clickable buttons -->
+					<option>Testing</option>
+					<option>Job Offer</option>
+					<option>Interview Offer</option>
+					<option>General Question</option>
+					<option>Programming Question</option>
+					<option>Work Expierence</option>
+				</select>
+				<textarea name="Message" placeholder="Message"></textarea>
+				<button type="submit" class="animalCrossingButton">Send</button><!-- The submit button is set up to the "Action" and "method=POST" above to finalize your post -->
+			</form>
+
+			<h5>
+				Give it a try yourself! Create an account on Formspree.
+			</h5>
+		</div>
+
+		<img src="images/formspree.JPG" alt="Formspree Screenshot" style="display: block; margin: 20px auto; width: 50%;">
+
+		<div class="centerContainer">
+			<div class="bulletPointTextBox">
+				<button id="toggleDarkMode" class="animalCrossingButton">
+					Toggle Dark Mode
+					<!--onclick="this.style.transform='scale(1.1)'; setTimeout(() => this.style.transform='scale(1.0)', 100)">Toggle Dark Mode--->
+				</button>
+				<button id="toggleAudio" class="animalCrossingButton">
+					Play Audio
+					<!--onclick="this.style.transform='scale(1.1)'; setTimeout(() => this.style.transform='scale(1.0)', 100)"> Play Audio <!-- Handles the on-click scale down pop -->
+				</button>
+			</div>
+		</div>
+
+		<script>
+			const body = document.body;
+			const navButtons = document.querySelectorAll(".navButton");
+			const button = document.getElementById('toggleAudio');
+			const darkModeButton = document.getElementById('toggleDarkMode');
+
+			// Check for saved preference in localStorage
+			const savedMode = localStorage.getItem("theme");
+
+			// This is for the music mute button
+			document.addEventListener('DOMContentLoaded', () => {
+				const audio = document.getElementById('animalCrossingMusic');
+				const musicSave = localStorage.getItem('playAudio');
+
+				// Apply saved preference
+				if (musicSave === 'true') {
+					button.textContent = 'Mute Audio';
+					document.addEventListener('click', enableAudioOnce, { once: true });
+				} else {
+					audio.muted = true; // Ensure muted by default
+					button.textContent = 'Play Audio';
+				}
+
+				// Toggle audio preference
+				button.addEventListener('click', () => {
+					if (audio.muted) {
+						audio.muted = false; // Unmute audio
+						button.textContent = 'Mute Audio';
+						localStorage.setItem('playAudio', 'true');
+					} else {
+						audio.muted = true; // Mute audio
+						button.textContent = 'Play Audio';
+						localStorage.setItem('playAudio', 'false');
+					}
+				});
+
+				// Enable audio on the first page click
+				function enableAudioOnce() {
+					if (musicSave === 'true') {
+						audio.muted = false; // Unmute audio
+					}
+				}
+			});
+
+			// Apply the saved theme if it exists
+			if (savedMode) {
+				navButtons.forEach((button) => { button.classList.add(savedMode) });
+				button.classList.add(savedMode);
+				darkModeButton.classList.add(savedMode);
+				body.classList.add(savedMode);
+			}
+			else {
+				// Default to light mode if no preference is saved
+				body.classList.add("light-mode");
+			}
+
+			const toggleButton = document.getElementById("toggleDarkMode");
+
+			if (toggleButton) {
+				// Toggle dark mode
+				toggleButton.addEventListener("click", () => {
+					if (body.classList.contains("dark-mode")) {
+						body.classList.replace("dark-mode", "light-mode");
+
+						navButtons.forEach((button) => { button.classList.remove("dark-mode") });
+						button.classList.remove("dark-mode");
+						darkModeButton.classList.remove("dark-mode");
+
+						localStorage.setItem("theme", "light-mode"); // Save preference
+					}
+					else {
+						body.classList.replace("light-mode", "dark-mode");
+
+						navButtons.forEach((button) => { button.classList.add("dark-mode") });
+						button.classList.add("dark-mode");
+						darkModeButton.classList.add("dark-mode");
+
+						localStorage.setItem("theme", "dark-mode"); // Save preference
+					}
+				});
+			}
+
+			// for the button UI click sounds and shrink
+			const muteUIClick = new Audio('assets/audio/clickUI.mp3'); // makes the audio from the file to play later
+			button.addEventListener('click', () => { muteUIClick.play() }); // Plays the audio file when the button is clicked
+
+			const darkModeUIClick = new Audio('assets/audio/bloopUI.mp3'); // makes a different audio from the file to play later
+			darkModeButton.addEventListener('click', () => { darkModeUIClick.play() }); // I could reuse the old aduio, but I want a different one
+		</script>
+		<script type="text/javascript" src="js/Music.js"></script>
+		<script type="text/javascript" src="js/LocalStorage.js"></script>
+		<<script type="text/javascript" src="js/FancyNavigation.js"></script>
+
+	</body>
+</html>
