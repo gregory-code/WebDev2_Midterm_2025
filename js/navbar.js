@@ -24,6 +24,7 @@ function generateNavbar() {
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="page4.html">Page 4</a></li>
                                 <li><a class="dropdown-item" href="page5.html">Page 5</a></li>
+								<li><a class="dropdown-item" href="page6.html">Page 6</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
