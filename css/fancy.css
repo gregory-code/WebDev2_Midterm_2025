@@ -1,0 +1,419 @@
+body.light-mode {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-size: 400px;
+    background-position: center;
+    background-repeat: repeat;
+    min-height: 100vh; /* This will let the page scroll and keeps the height clamped */
+    overflow-y: auto; /* Helps allow scrolling */
+}
+
+body.dark-mode {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('../images/eggnoredAnimalCrossingBlackWhite.png'); /* Background image of the whole website  */
+    background-size: 400px;
+    background-position: center;
+    background-repeat: repeat;
+    min-height: 100vh; /* This will let the page scroll and keeps the height clamped */
+    overflow-y: auto; /* Helps allow scrolling */
+}
+
+
+button 
+{
+    background-color: #1E90FF; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+}
+
+form
+{
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin: auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 30%; /* this width is realtive to the parent */
+    padding: 10px; /* Padding inside the fields */
+    margin: 8px 0; /* Vertical spacing */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Increase font size */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border color and box-shadow */
+}
+
+input[type="message"],
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border color and box-shadow */
+}
+
+select {
+    width: 20%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: whitesmoke; /* White background */
+    background-position: right 10px center; /* Position the arrow */
+    background-size: 12px; /* Size of the custom arrow */
+    transition: border-color 0.3s;
+}
+
+*
+{ /*This will apply the font to ALL text, very handy */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Text for links */
+.link {
+    font-size: 32px;
+    color: cornflowerblue;
+    line-height: 1.6;
+    margin: 20px 0;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; /* Creates a border around  the text */
+    text-decoration: none; /* this will remove the underline links normally have */
+}
+
+.link:hover
+{
+    text-decoration: none; /* Don't do the underline at first */
+}
+
+/* Underline Animation */
+.link::after 
+{
+    content: ""; /* Creates a pseudo-element */
+    position: absolute;
+    left: 50%; /* Start from the center */
+    bottom: 0; /* Align with the bottom of the text */
+    width: 100%; /* Match the width of the text */
+    height: 2px; /* Height of the underline */
+    background: cornflowerblue; /* Color of the underline */
+    transform: translateX(-50%) scaleX(0); /* Start off as a scale of 0 (invisible) */
+    transition: transform 0.3s ease; /* Animate the transform */
+}
+
+/* Scale to show underline on hover */
+.link:hover::after 
+{
+    transform: translateX(-50%) scaleX(1); /* Scale to 1 (fully visible) */
+}
+
+/* Header 1 */
+h1 
+{
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; /* Creates a border around  the text */
+}
+
+/* Header 5 */
+h5 
+{
+    font-size: 30px;
+    color: white;
+    text-align: left;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; /* Creates a border around  the text */
+}
+
+/* Paragraphs */
+p {
+    font-size: 32px;
+    color: white;
+    line-height: 1.6;
+    margin: 20px 0;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; /* Creates a border around  the text */
+}
+
+.button-container 
+{
+    display: flex;
+    flex-direction: column; /* Arrange buttons vertically */
+    gap: 15px; /* Add spacing between buttons */
+    align-items: center; /* Center buttons horizontally */
+}
+
+.animalCrossingButton
+{
+    padding: 15px 90px;
+    color: white; /* The text color */
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.animalCrossingButton.dark-mode 
+{
+    background: linear-gradient(135deg, #118023, #1a613f);
+}
+
+
+.animalCrossingButton:hover 
+{
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+}
+
+
+/* Container for the buttons */
+.navContainer 
+{
+    z-index: 1; /* this has to be 1 or else in some scenes other objects lay over it */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* aligns it's items to be in the center*/
+    gap: 50px;
+    position: fixed;
+    margin: 30px 60px;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%); /* always puts the container half way inbetween the screen on the Y position*/
+}
+
+/* Diamond-shaped button for the navigation */
+.navButton 
+{
+    width: 110px;
+    height: 110px;
+    background-color: #4CAF50; /*not super important because we're using the gradient color*/
+    margin: 20px 0;
+    transform: rotate(45deg); /* Rotate to form a diamond */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* thickness and color of the box, in this case a seethrough black box*/
+    background: linear-gradient(135deg, #2E8B57, #00ff90); /* It goes from top right to bottom left, blending between the two values given */
+    animation: fadeInUp 0.6s ease-in-out; /*assinging the animation on start up*/
+}
+
+.navButton.dark-mode
+{
+    background: linear-gradient(135deg, #384f37, #418540);
+}
+
+.navInside 
+{
+    font-size: 32px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -40%) rotate(-45deg); /* the inside image for each button */
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; /* Creates a border around  the text */
+}
+
+.navInside img
+{
+    width: 130%;
+    height: 130%;
+}
+
+/* button on hover effect */
+.navButton:hover 
+{
+    transform: translateX(5px) rotate(45deg) scale(1.15); /* keep the rotate the same, increase the size and move it forward a bit*/
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.navTextBackground 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -200%) rotate(-45deg);
+    width: 150px;
+    height: 50px;
+    background-image: url('../images/Darkmoon_Art_Background.jpg'); /* Background image for the text */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0; /* Initially hidden */
+    transition: all 0.3s ease; /* Transition for animation */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cip-path: polygon ( 50% 0%, /* Top */
+    85% 25%, /* Top right */
+    100% 50%, /* Right */
+    85% 75%, /* Bottom right */
+    50% 100%, /* Bottom */
+    15% 75%, /* Bottom left */
+    0% 50%, /* Left */
+    15% 25% /* Top left */ );
+    border-radius: 20px; /* Add rounded edges */
+}
+
+.navText 
+{
+    font-size: 32px;
+    color: white;
+    z-index: 1; /* Make sure text is on top of the background */
+    position: relative;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; /* Creates a border around  the text */
+}
+
+.navButton:hover .navTextBackground 
+{
+    opacity: 1;
+    transform: translate(5%, -250%) rotate(-45deg); /* keep the rotation consistent but move it forward */
+}
+
+.centerContainer
+{
+    display:flex;
+    flex-direction: column; /* These enable the centerContainer to hold any elements and center them onto the scree */
+    align-items: center;  /**/
+    text-align: center;  /**/
+}
+
+.lowerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform: translateY(85%);
+    width: 100%; /* Stretch across the full width of the viewport */
+    background-color: transparent; /* no background */
+}
+
+.centerTextBox {
+    background-color: rgba(0, 0, 0, 0.6); /* Black somewhat green background with some opacity */
+    border-radius: 15px; /* Rounded corners */
+    padding: 40px; /* Space inside the box */
+    width: 60%; /* Width of the box */
+    max-width: 1000px; /* Maximum width of the box */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* shadow for depth */
+    transform: translate(0%, 10%);
+}
+
+.bulletPointTextBox {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 30px;
+    width: 60%;
+    max-width: 1200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: translate(0%, 12%);
+}
+
+.videoContainer 
+{
+    width: 80%; /* Responsive width */
+    max-width: 800px; /* Max width for larger screens */
+}
+
+iframe 
+{
+    width: 100%; /* Full width of the container parent */
+    height: 450px; /* Set the height */
+    border: groove; /* Remove border */
+}
+
+.galleryContainer 
+{
+    z-index: -1; /* Make sure the gallery is behind the navigation buttons or else they won't be clickable */
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    overflow: hidden; /* This will hide the other images in the gallery, otherwise they'll all appear in a straight line */
+    border-radius: 10px;
+    transform: translate(0%, 70%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.gallerySlide 
+{
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallerySlide img 
+{
+    min-width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+.videoContainer 
+{
+    z-index: 10; /* Make sure the gallery is behind the navigation buttons or else they won't be clickable */
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    overflow: hidden; /* This will hide the other images in the gallery, otherwise they'll all appear in a straight line */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    transform: translate(55%, 95%);
+    margin-top: 20px;
+}
+
+.prevButton,
+.nextButton 
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 24px;
+    user-select: none;
+}
+
+.prevButton 
+{
+    left: 10px;
+}
+
+.nextButton 
+{
+    right: 10px;
+}
+
+.prevButton:hover,
+.nextButton:hover 
+{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fadeInUp /* Simple fade in when the website is loaded */
+{
+    from {
+        opacity: 0;
+        transform: translateX(-20px) rotate(45deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(45deg);
+    }
+}
