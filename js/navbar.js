@@ -12,24 +12,19 @@ function generateNavbar() {
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="page2.html">Page 2</a>
+                            <a class="nav-link" href="memory.html">Memory</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="page3.html">Page 3</a>
+                            <a class="nav-link" href="page3.html">Space Marine</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="page4.html">Page 4</a></li>
-                                <li><a class="dropdown-item" href="page5.html">Page 5</a></li>
-								<li><a class="dropdown-item" href="page6.html">Page 6</a></li>
-								<li><a class="dropdown-item" href="memory.html">Memory Game</a></li>
+                                <li><a class="dropdown-item" href="page5.html">Sonic</a></li>
+								<li><a class="dropdown-item" href="page6.html">Forms</a></li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search" onsubmit="handleSearch(event)">
