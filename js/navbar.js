@@ -24,6 +24,7 @@ function generateNavbar() {
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="page5.html">Sonic</a></li>
 								<li><a class="dropdown-item" href="page6.html">Forms</a></li>
+								<li><a class="dropdown-item" href="page2.html">Water Vapor</a></li>
                             </ul>
                         </li>
                     </ul>
